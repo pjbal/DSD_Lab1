@@ -38,8 +38,9 @@ end TwoInputXOR_VHDL;
 architecture Behavioral of TwoInputXOR_VHDL is
 
 begin
-process(a,b)
+process(a,b)--watch for change in a and b
 	begin
+	--define output relationship with inputs a and b
 	c <= (a or b) and ( not(a and b)) after 7ns;
 end process;
 

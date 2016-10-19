@@ -35,28 +35,31 @@ entity TwoInputNAND_VHDL is
            c : out  STD_LOGIC);
 end TwoInputNAND_VHDL;
 
+--beviour defined with if statments
 architecture Behavioral1 of TwoInputNAND_VHDL is
 
 begin
 	
-process (a, b)
+process (a, b)--watch for change in a and b
 	begin
 	
-	if a='1' and b='1' then
+	if a='1' and b='1' then--if both inputs high
 		c <= '0';
-	else
+	else --any other posibility
 		c <= '1';
 	end if;
 end process;
 
 end Behavioral1;
 
+--beviour defined with logic operators
 architecture Behavioral2 of TwoInputNAND_VHDL is
 
 begin
 	
-process (a, b)
+process (a, b)--watch for change in a and b
 	begin
+		--define output relationship with inputs a and b
 		c <=not(a and b) after 7ns;
 	
 end process;

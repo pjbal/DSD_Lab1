@@ -38,8 +38,9 @@ end TwoInputNOR_VHDL;
 architecture Behavioral of TwoInputNOR_VHDL is
 	
 begin
-process(a, b)
+process(a, b)--watch for change in a and b
 	begin
+		--define output relationship with inputs a and b
 		c <= not(a or b) after 14ns;
 end process;
 end Behavioral;

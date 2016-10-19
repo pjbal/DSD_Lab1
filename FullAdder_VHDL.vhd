@@ -29,6 +29,7 @@ end FullAdder_VHDL;
 
 architecture Behavioral of FullAdder_VHDL is
 
+	--define halfAdder inputs and outputs to use in full adder
 	component HalfAdder_VHDL
 		Port ( a : in  STD_LOGIC;
            b : in  STD_LOGIC;
@@ -36,6 +37,7 @@ architecture Behavioral of FullAdder_VHDL is
            Cout : out  STD_LOGIC);
 	end component;
 		
+	--define two input OR inputs and outputs to use in full adder
 	component TwoInputOR_VHDL
 		Port ( a : in  STD_LOGIC;
            b : in  STD_LOGIC;
@@ -45,10 +47,11 @@ architecture Behavioral of FullAdder_VHDL is
 	signal sumSig, Csig1, Csig2 : std_logic;
 	
 begin
-
-	Int_HalfAdder1: HalfAdder_VHDL port map( a, b, sumSig, Csig1);
-	Int_HalfAdder2: HalfAdder_VHDL port map( sumSig, Cin, s, Csig2);
-	Int_TwoInputOR: TwoInputOR_VHDL port map (Csig1, Csig2, Cout);
+	
+	--map the signals to the half adder and two input OR defined above 
+	Int_HalfAdder1: HalfAdder_VHDL port map( a, b, sumSig, Csig1);--first half adder
+	Int_HalfAdder2: HalfAdder_VHDL port map( sumSig, Cin, s, Csig2);--second half adder
+	Int_TwoInputOR: TwoInputOR_VHDL port map (Csig1, Csig2, Cout);--or gate to check both adders for carry
 
 end Behavioral;
 

@@ -39,11 +39,11 @@ end TwoInputMultiplexor_VHDL;
 architecture Behavioral of TwoInputMultiplexor_VHDL is
 
 begin 
-	process (a, b, Con)
+	process (a, b, Con)--watch for change in a, b and Con
 		begin
-		if Con = '0' then
+		if Con = '0' then --input line a selected
 			d <= a after 7 ns;
-		else
+		else--input line b selected
 			d <= b after 7 ns;
 		end if;
 	end process;	

@@ -69,13 +69,15 @@ BEGIN
       -- hold reset state for 100 ns.
       wait for 100 ns;	
 
+		--apply first possible signal values
       sig_a <= '1'; 
 		
 		wait for 100 ns;
 		
+		--apply second possible signal values
 		sig_a <= '0';
 
-      wait;
+      wait;--wait forever
    end process;
 
 END;

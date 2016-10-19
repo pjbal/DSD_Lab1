@@ -73,11 +73,13 @@ BEGIN
       -- hold reset state for 100 ns.
       wait for 100 ns;	
 
+		--loop through all combinations of input variables
 		floop0: for l in std_logic range '0' to '1' loop
 			floop1: for i in std_logic range '0' to '1' loop
 				floop2: for j in std_logic range '0' to '1' loop
 					floop3: for k in std_logic range '0' to '1' loop
 				
+						--apply new possible signal values
 						sig_a <= k;
 						sig_b <= j;
 						sig_c <= i;
@@ -88,8 +90,9 @@ BEGIN
 					end loop;
 				end loop;
 			end loop; 
-		end loop;		
-      wait;
+		end loop;--end of combinations loops
+		
+      wait;--wait forever
    end process;
 
 END;

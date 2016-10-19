@@ -37,8 +37,9 @@ end Inverter_VHDL;
 architecture Behavioral of Inverter_VHDL is
 
 begin
-	process(a)
+	process(a)--watch for change in a
 		begin
+			--define output relationship with input a
 			b <= (not a) after 7ns;
 	end process;
 end Behavioral;

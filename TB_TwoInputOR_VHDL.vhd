@@ -54,46 +54,33 @@ ARCHITECTURE behavior OF TB_TwoInputOR_VHDL IS
 
  	--Outputs
    signal sig_c : std_logic;
-   -- No clocks detected in port list. Replace <clock> below with 
-   -- appropriate port name 
- 
-  -- constant <clock>_period : time := 10 ns;
+
  
 BEGIN
  
 	-- Instantiate the Unit Under Test (UUT)
    uut: TwoInputOR_VHDL PORT MAP (sig_a, sig_b, sig_c);
 
-   -- Clock process definitions
-   --<clock>_process :process
-  -- begin
-	--	<clock> <= '0';
-	--	wait for <clock>_period/2;
-	--	<clock> <= '1';
-	--	wait for <clock>_period/2;
-  -- end process;
- 
-
-   -- Stimulus process
+    -- Stimulus process
    stim_proc: process
    begin		
       -- hold reset state for 100 ns.
       wait for 100 ns;	
 
-  --   wait for <clock>_period*10;
-		
+		--loop through all combinations of input variables
 		floop1: for i in std_logic range '0' to '1' loop
 			floop2: for j in std_logic range '0' to '1' loop
 			
+				--apply new signal values
 				sig_a <= j;
 				sig_b <= i;
 				
 				wait for 100ns;
 				
 			end loop;
-		end loop;
+		end loop;--end of combinations loops
 
-      wait;
+      wait;--wait forever
    end process;
 
 END;

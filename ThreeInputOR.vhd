@@ -39,8 +39,9 @@ end ThreeInputOR;
 architecture Behavioral of ThreeInputOR is
 
 begin
-	process(a,b,c)
+	process(a,b,c)--watch for change in a, b and c
 		begin
+		--define output relationship with input
 			d <= a or b or c after 7ns;
 	end process;
 

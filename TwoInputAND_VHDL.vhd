@@ -38,8 +38,9 @@ end TwoInputAND_VHDL;
 architecture Behavioral of TwoInputAND_VHDL is
 
 begin
-process(a, b)
+process(a, b)--watch for change in a and b
 	begin
+	--define output relationship with inputs a and b
 	c <= a and b after 7ns;
 end process;
 

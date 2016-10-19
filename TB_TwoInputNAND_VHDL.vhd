@@ -55,24 +55,14 @@ ARCHITECTURE behavior OF TB_TwoInputNAND_VHDL IS
  	--Outputs
    signal sig_c : std_logic;
 	
-   -- No clocks detected in port list. Replace <clock> below with 
-   -- appropriate port name 
- 
-  --  constant <clock>_period : time := 10 ns;
+
  
 BEGIN
  
 	-- Instantiate the Unit Under Test (UUT)
    uut: TwoInputNAND_VHDL PORT MAP (sig_a, sig_b, sig_c);
 
-   -- Clock process definitions
-   -- <clock>_process :process
-  --  begin
-	-- 	<clock> <= '0';
-	-- 	wait for <clock>_period/2;
-	-- 	<clock> <= '1';
-	-- 	wait for <clock>_period/2;
-  --  end process;
+
  
 
    -- Stimulus process
@@ -81,22 +71,24 @@ BEGIN
       -- hold reset state for 100 ns.
       wait for 100 ns;	
 
-   --    wait for <clock>_period*10;
-
+		--apply first signal values
       sig_a <= '0';
 		sig_b <= '0';
 		
 		wait for 100ns;
 		
+		--apply new signal values
 		sig_a <= '1';
 		
 		wait for 100ns;
 		
+		--apply new signal values
 		sig_a <= '0';
 		sig_b <= '1';
 		
 		wait for 100ns;
 		
+		--apply new signal values
 		sig_a <= '1';
 		
       wait;

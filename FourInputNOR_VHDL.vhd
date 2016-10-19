@@ -40,8 +40,9 @@ end FourInputNOR_VHDL;
 architecture Behavioral of FourInputNOR_VHDL is
 
 begin
-	process(a, b, c, d)
+	process(a, b, c, d)--watch for change in inputs
 		begin
+			--define output relationship with inputs a and b
 			e <= not( a or b or c or d) after 14 ns;
 	end process;
 

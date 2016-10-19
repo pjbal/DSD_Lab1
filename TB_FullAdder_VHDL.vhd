@@ -79,6 +79,8 @@ BEGIN
 			floop2: for j in std_logic range '0' to '1' loop
 				floop3: for k in std_logic range '0' to '1' loop
 			
+					
+					--apply new possible signal values
 					sig_a <= k;
 					sig_b <= j;
 					Cin <= i;
