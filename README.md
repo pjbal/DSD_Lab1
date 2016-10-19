@@ -1,7 +1,7 @@
 # DSD_Labs
 -Digital System Design Labs 2016
 
-Devices and their test benches for Digital Systems Design Group 2016:
+Devices and their test benches for Digital Systems Design Lab 1 Group 2 2016:
 
 Devices needed are:
 • An Inverter (i.e. a NOT gate)
